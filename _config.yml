@@ -1,1 +1,54 @@
-theme: jekyll-theme-leap-day
+title: Smartlife 사용자 포럼
+email: support@hknetworks.kr
+description: |
+  스마트한 홈, 오피스, Shop, 공장, 빌딩 관련 다양한 디바이스, 허브, 게이트웨이, 서버 및 서비스 분야에서 글로벌 리더를 지향합니다.
+또한 IoT 분야의 통합 솔루션을 제공함으로써 고객의 기쁨과 행복한 생활에 기여하는 기업이 되겠습니다.
+baseurl: ''
+url: 'http://forum.hknetworks.kr'
+timezone: Asia/Seoul 
+
+permalink: /:year/:month/:day/:title/
+
+excerpt_separator: <!--more-->
+
+markdown: kramdown
+
+krandown:
+  input: GFM
+  highlighter: rouge
+
+plugins:
+  - jekyll-paginate
+
+  
+paginate: 5
+paginate_path: '/page/:num/'
+
+collections:
+  authors:
+    output: true
+    permalink: /authors/:path/
+  tags:
+    output: true
+    permalink: /tags/:path/
+
+defaults:
+  - scope:
+      path: ''
+      type: authors
+    values:
+      layout: author
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+
+exclude: [README.md, Gemfile, Gemfile.lock]
+
+keep_files: [assets, files]
+github: [metadata]
+# iolo's custom
+author: support@hknetworks.kr
+image: '/assets/images/default_blog_cover.jpg'
+asset_url: /assets
